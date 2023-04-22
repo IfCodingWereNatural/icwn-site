@@ -2,12 +2,18 @@ import { SSTConfig } from 'sst'
 import { API } from './stacks/MyStack'
 
 export default {
-  config(_input) {
+  config({
+    region = 'us-east-1',
+    profile = 'personal',
+    stage = 'dev',
+    ...config
+  }) {
     return {
+      ...config,
+      region,
+      stage,
+      profile,
       name: 'sst-tutorial',
-      region: 'us-east-1',
-      stage: 'dev',
-      profile: 'personal',
     }
   },
 

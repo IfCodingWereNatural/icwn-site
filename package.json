@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "sst dev",
+    "prepare": "husky install",
     "build": "sst build",
     "deploy": "sst deploy",
     "remove": "sst remove",
@@ -14,12 +15,20 @@
   "devDependencies": {
     "@darksinge/eslint-config": "^1.0.5",
     "@tsconfig/node16": "^1.0.3",
+    "astro-eslint-parser": "^0.13.2",
     "aws-cdk-lib": "2.72.1",
     "constructs": "10.1.156",
+    "eslint-plugin-astro": "^0.26.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
+    "prettier-plugin-tailwindcss": "^0.2.5",
     "sst": "^2.5.5",
     "typescript": "^5.0.4"
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "@aws-sdk/client-sns": "^3.316.0"
+  }
 }

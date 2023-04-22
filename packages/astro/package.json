@@ -10,6 +10,7 @@
     "astro": "sst bind astro"
   },
   "dependencies": {
+    "@astrojs/markdoc": "^0.1.1",
     "@aws-sdk/client-s3": "^3.316.0",
     "@aws-sdk/s3-request-presigner": "^3.316.0",
     "astro": "^2.3.0"
