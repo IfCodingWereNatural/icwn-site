@@ -14,7 +14,7 @@ const command = new PutObjectCommand({
   Key: crypto.randomUUID(),
   Bucket: Bucket.bucket.bucketName,
 })
-const url = await getSignedUrl(new S3Client({}), command)
+const url = await getSignedUrl(client, command)
 ---
 
 <Layout title="Astro x SST">
@@ -40,7 +40,7 @@ const url = await getSignedUrl(new S3Client({}), command)
           },
         })
 
-        window.location.href = image.url.split('?')[0] || '/'
+        window.location.href = image.url.split('?').at(0) || '/'
       })
     </script>
   </main>

@@ -2,9 +2,9 @@
   "name": "blog",
   "version": "2.2.0",
   "scripts": {
-    "dev": "astro check --watch & astro dev",
+    "dev": "sst bind astro check --watch & astro dev",
     "start": "astro dev",
-    "build": "astro build && jampack ./dist",
+    "build": "sst bind astro build && jampack ./dist",
     "preview": "astro preview",
     "sync": "astro sync",
     "astro": "astro",
@@ -14,9 +14,11 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@astrojs/mdx": "^0.19.0",
     "@astrojs/rss": "^2.3.0",
     "@resvg/resvg-js": "^2.4.1",
     "astro": "^2.1.5",
+    "astro-sst": "^2.5.5",
     "fuse.js": "^6.6.2",
     "github-slugger": "^2.0.0",
     "remark-collapse": "^0.1.2",
