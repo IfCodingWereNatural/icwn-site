@@ -7,10 +7,6 @@ import getPageNumbers from '@utils/getPageNumbers'
 import { getCollection } from 'astro:content'
 
 const posts = await getCollection('sst')
-console.log(
-  'posts:',
-  posts.map(({ id, data }) => ({ id, data })),
-)
 
 const sortedPosts = sortPostsByPart(posts)
 
