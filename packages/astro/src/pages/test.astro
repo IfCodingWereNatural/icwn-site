@@ -1,12 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import { getEntryBySlug } from 'astro:content'
-const entry = await getEntryBySlug('blog', 'test')
-const { Content } = await entry.render()
+const entry = await getEntryBySlug('sst-tutorial', 'test')
+const { Content } = (await entry?.render()) ?? {}
 ---
 
 <Layout title="Test">
   <main>
-    <Content />
+    {Content && <Content />}
   </main>
 </Layout>

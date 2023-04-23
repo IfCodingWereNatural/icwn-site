@@ -6,12 +6,12 @@ import remarkCollapse from 'remark-collapse'
 import sitemap from '@astrojs/sitemap'
 import { SITE } from './src/config'
 import mdx from '@astrojs/mdx'
-import aws from 'astro-sst/lambda'
+// import aws from 'astro-sst/lambda'
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
-  adapter: aws(),
+  // output: 'server',
+  // adapter: aws(),
   site: SITE.website,
   integrations: [
     tailwind({
