@@ -1,8 +1,8 @@
 import { defineCollection } from 'astro:content'
-import { blogSchema } from './_schemas'
+import { sstTutorialSchema } from './_schemas'
 
 const sst = defineCollection({
-  schema: blogSchema,
+  schema: sstTutorialSchema,
 })
 
 export const collections = { sst }

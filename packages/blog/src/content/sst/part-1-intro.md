@@ -1,12 +1,12 @@
 ---
-title: SST Tutorial, Part 1 | Introduction
+title: 'SST Tutorial, Part 1 | Introduction'
 pubDatetime: 2023-04-22T00:00:00Z
-postSlug: sst-tutorial-intro
+postSlug: intro
 featured: true
-draft: false
 tags:
   - SST
 description: Introduction to Serverless Stack (SST)
+postNumber: 1
 ---
 
 Learn how to build full-stack applications on AWS with Serverless Stack (SST).

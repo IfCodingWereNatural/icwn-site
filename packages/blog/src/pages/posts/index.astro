@@ -1,14 +1,18 @@
 ---
 import { SITE } from '@config'
 import Posts from '@layouts/Posts.astro'
-import getSortedPosts from '@utils/getSortedPosts'
+import sortPostsByPart from '@utils/getSortedPosts'
 import getPageNumbers from '@utils/getPageNumbers'
 
 import { getCollection } from 'astro:content'
 
 const posts = await getCollection('sst')
+console.log(
+  'posts:',
+  posts.map(({ id, data }) => ({ id, data })),
+)
 
-const sortedPosts = getSortedPosts(posts)
+const sortedPosts = sortPostsByPart(posts)
 
 const totalPages = getPageNumbers(sortedPosts.length)
 

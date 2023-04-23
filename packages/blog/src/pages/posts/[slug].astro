@@ -2,7 +2,7 @@
 import { CollectionEntry, getCollection } from 'astro:content'
 import Posts from '@layouts/Posts.astro'
 import PostDetails from '@layouts/PostDetails.astro'
-import getSortedPosts from '@utils/getSortedPosts'
+import sortPostsByPart from '@utils/getSortedPosts'
 import getPageNumbers from '@utils/getPageNumbers'
 import slugify from '@utils/slugify'
 import { SITE } from '@config'
@@ -12,7 +12,7 @@ export interface Props {
 }
 
 export async function getStaticPaths() {
-  const posts = await getCollection('sst', ({ data }) => !data.draft)
+  const posts = await getCollection('sst')
 
   const postResult = posts.map((post) => ({
     params: { slug: slugify(post.data) },
@@ -31,7 +31,7 @@ const { post } = Astro.props
 
 const posts = await getCollection('sst')
 
-const sortedPosts = getSortedPosts(posts)
+const sortedPosts = sortPostsByPart(posts)
 
 const totalPages = getPageNumbers(sortedPosts.length)
 

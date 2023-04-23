@@ -1,12 +1,12 @@
 ---
-title: SST Tutorial, Part 2 | Getting Started
+title: 'SST Tutorial, Part 2 | Getting Started'
 pubDatetime: 2023-04-22T00:00:00Z
-postSlug: sst-tutorial-course-outline
+postSlug: getting-started
 featured: true
-draft: false
 tags:
   - SST
 description: Getting started with SST.
+postNumber: 2
 ---
 
 Learn how to build full-stack applications on AWS with Serverless Stack (SST).

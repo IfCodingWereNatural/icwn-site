@@ -1,12 +1,12 @@
 import rss from '@astrojs/rss'
 import { getCollection } from 'astro:content'
-import getSortedPosts from '@utils/getSortedPosts'
+import { sortPostsByPart } from '@utils/getSortedPosts'
 import slugify from '@utils/slugify'
 import { SITE } from '@config'
 
 export async function get() {
   const posts = await getCollection('sst')
-  const sortedPosts = getSortedPosts(posts)
+  const sortedPosts = sortPostsByPart(posts)
   return rss({
     title: SITE.title,
     description: SITE.desc,
