@@ -2,7 +2,7 @@
 title: 'Finish Deploying Our First SST Website'
 pubDatetime: 2023-04-23
 postSlug: website-deployment
-featured: true
+featured: false
 tags:
   - SST
 description: |

@@ -2,7 +2,7 @@
 title: 'Live Lambda: The Main Reason to Use SST'
 pubDatetime: 2023-04-23
 postSlug: live-lambda
-featured: true
+featured: false
 tags:
   - SST
 description: If there's one reason to use SST, it's Live Lambda.

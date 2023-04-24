@@ -2,7 +2,7 @@
 title: 'Getting Started'
 pubDatetime: 2023-04-22
 postSlug: getting-started
-featured: true
+featured: false
 tags:
   - SST
 description: Getting started with SST.
