@@ -14,4 +14,3 @@ In this video, I'll setup our first SST project and show how easy it is to
 deploy infrastructure to AWS.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/PlmzPEfchBE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-

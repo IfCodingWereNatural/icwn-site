@@ -1,7 +1,6 @@
 ---
 title: 'The Essence of Vim: Perspectives from a Former VSCode User'
 pubDatetime: 2022-04-18
-postSlug: essence-of-vim
 featured: false
 tags:
   - VIM

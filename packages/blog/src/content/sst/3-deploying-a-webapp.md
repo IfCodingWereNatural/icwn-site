@@ -6,12 +6,13 @@ featured: false
 tags:
   - SST
 description: |
-    Picking up from Part 2 and deploying the Astro website to
-    CloudFront.
+  Picking up from Part 2 and deploying the Astro website to
+  CloudFront.
 postNumber: 3
 ---
 
 ## Outline
+
 1. Explain what we're doing
 1. Deploy to CloudFront and explain the architecture.
    - Upload an image to demonstrate it works in the cloud
@@ -27,4 +28,3 @@ postNumber: 3
      construct makes more sense for my needs, (this is because `AstroSite`
      requires you configure astro with SSR enabled).
 1. Next up, Live Lambda!
-
