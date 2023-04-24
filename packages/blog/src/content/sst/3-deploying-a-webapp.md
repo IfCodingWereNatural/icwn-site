@@ -14,12 +14,15 @@ postNumber: 3
 ## Outline
 
 1. Explain what we're doing
+
 1. Deploy to CloudFront and explain the architecture.
+
    - Upload an image to demonstrate it works in the cloud
    - Create a cronjob to delete images.
-1. Introduce [ifcodingwerenatural.com](https://ifcodingwerenatural.com). If I'm
-   going to make a tutorial on deploying a website, I might as well launch a
-   website for my YouTube channel while I'm at it!
+
+1. Introduce [ifcodingwerenatural.com](https://ifcodingwerenatural.com).
+
+   - If I'm going to make a tutorial on deploying a website, I might as well launch a website for my YouTube channel while I'm at it!
    - Show that I deployed using the `StaticSite` construct instead of
      `AstroSite`.
    - Explain that my blog site needs almost no JS. One of Astro's main selling
@@ -27,4 +30,5 @@ postNumber: 3
      so even though there's an `AstroSite` construct, the `StaticSite`
      construct makes more sense for my needs, (this is because `AstroSite`
      requires you configure astro with SSR enabled).
+
 1. Next up, Live Lambda!

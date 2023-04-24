@@ -41,7 +41,5 @@ postNumber: 4
        However, you still have to wait for the update to occur in the cloud.
        Even if it's only a few seconds, it can still be frustrating.
 
-   -
-
    - Uses AWS IoT, which is completely serverless. This means it's very cost
      effective.

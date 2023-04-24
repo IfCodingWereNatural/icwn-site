@@ -22,8 +22,10 @@ const { Content } = await post.render()
 
 const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin).href
 
-const linkify = (title: string) =>
-  title.replace(/SST Tutorial, /i, '').replace(' |', ':')
+const getButtonText = (title: string, isNext: boolean = false) =>
+  title
+    .replace(/SST Tutorial, Part \d+/i, isNext ? 'Next' : 'Previous')
+    .replace(' |', ':')
 ---
 
 <Layout title={title} author={author} description={description} ogImage={ogUrl}>
@@ -46,14 +48,15 @@ const linkify = (title: string) =>
     <article id="article" role="article" class="prose mx-auto mt-8 max-w-3xl">
       <Content />
     </article>
+    <br />
 
     <div class="mt-8 grid grid-cols-2">
       {
-        prev && (
+        prev ? (
           <LinkButton
             href={`/posts/${slugify(prev.data)}/`}
-            title={linkify(prev.data.title)}
-            className={`focus-outline p-3 sm:p-1`}
+            title={prev.data.title}
+            className={`focus-outline p-2 border-2 border-skin-accent mr-4`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -91,17 +94,19 @@ const linkify = (title: string) =>
                 </g>
               </g>
             </svg>
-            <div>{linkify(prev.data.title)}</div>
+            <div>{getButtonText(prev.data.title)}</div>
           </LinkButton>
+        ) : (
+          <div />
         )
       }
 
       {
-        next && (
+        next ? (
           <LinkButton
             href={`/posts/${slugify(next.data)}/`}
-            title={linkify(next.data.title)}
-            className={`focus-outline p-3 sm:p-1`}
+            title={next.data.title}
+            className={`focus-outline p-2 border-2 border-skin-accent ml-4`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -140,8 +145,10 @@ const linkify = (title: string) =>
               </g>
             </svg>
 
-            <div>{linkify(next.data.title)}</div>
+            <div>{getButtonText(next.data.title, true)}</div>
           </LinkButton>
+        ) : (
+          <div />
         )
       }
     </div>
