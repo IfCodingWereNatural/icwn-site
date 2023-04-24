@@ -30,9 +30,8 @@ postNumber: 3
 
      TL;DR: if you don't want to deal with CORS, set `cors: true` in the config.
 
-   - I made a claim about having wide open permissions locally. I need to test
-     this out, because the docs say the lambda function that runs locally
-     should use the same permissions as the deployed lambda.
+   - Show the changes I made
+       - Changed the bucket name from `bucket` to `images`.
 
 ## Deploy to CloudFront and explain the architecture.
 

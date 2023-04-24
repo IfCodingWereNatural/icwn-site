@@ -8,7 +8,7 @@ export function API({ stack }: StackContext) {
     },
   })
 
-  const bucket = new Bucket(stack, 'bucket', {
+  const bucket = new Bucket(stack, 'images', {
     cors: true,
   })
 

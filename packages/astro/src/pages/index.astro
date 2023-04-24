@@ -12,8 +12,9 @@ const client = new S3Client({
 const command = new PutObjectCommand({
   ACL: 'public-read',
   Key: crypto.randomUUID(),
-  Bucket: Bucket.bucket.bucketName,
+  Bucket: Bucket.images.bucketName,
 })
+
 const url = await getSignedUrl(client, command)
 ---
 

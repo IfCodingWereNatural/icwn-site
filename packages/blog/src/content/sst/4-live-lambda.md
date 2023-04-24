@@ -43,6 +43,11 @@ postNumber: 4
 
        However, you still have to wait for the update to occur in the cloud.
        Even if it's only a few seconds, it can still be frustrating.
+       
+   - Check out the [Advantages](https://docs.sst.dev/live-lambda-development#advantages) section in docs.
+        - The docs say it supports Lambda "IAM permissions", but from what I
+          can tell this isn't true. If I'm totally missing something and you're
+          from the SST team, please correct me in the comments.
 
    - Uses AWS IoT, which is completely serverless. This means it's very cost
      effective.
