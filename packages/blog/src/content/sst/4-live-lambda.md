@@ -1,5 +1,5 @@
 ---
-title: 'Live Lambda: The Main Reason to Use SST'
+title: 'Live Lambda'
 pubDatetime: 2023-04-23
 postSlug: live-lambda
 featured: false
@@ -11,7 +11,8 @@ postNumber: 4
 
 ### Video Outline:
 
-1. Show with showing the `Api` construct and pull up one of the lambda handlers.
+1. Demonstrate by showing the `Api` construct and pull up one of the lambda
+   handlers.
    1. Start up sst
    1. Invoke a function
    1. Make a change
@@ -19,8 +20,8 @@ postNumber: 4
    1. Profit
 2. Explain why this is so amazing.
 
-   - (I already touched on some of these things in the introduction video)
-   - Working on lambda can be really painful.
+   - I already touched on some of these things in the introduction video
+   - Working on lambda can be really painful
 
      - I used to use Serverless Framework and they had a feature called
        serverless offline. I found it really difficult to work with

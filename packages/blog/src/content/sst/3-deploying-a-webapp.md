@@ -13,16 +13,22 @@ postNumber: 3
 
 ## Outline
 
-1. Explain what we're doing
+1. Show what I'll be deploying
+
+   - Use cloudfront URL so you don't reveal `ifcodingwerenatural.com` yet
+   - Show the file uploader thingy. I'll show the rest of the blog site later.
 
 1. Deploy to CloudFront and explain the architecture.
 
-   - Upload an image to demonstrate it works in the cloud
+   - In last video, I showed that I could upload an image to S3 from my local
+     machine. Upload an image on the deployed site to demonstrate it works in
+     the cloud
    - Create a cronjob to delete images.
 
 1. Introduce [ifcodingwerenatural.com](https://ifcodingwerenatural.com).
 
-   - If I'm going to make a tutorial on deploying a website, I might as well launch a website for my YouTube channel while I'm at it!
+   - If I'm going to make a tutorial on deploying a website, I might as well
+     launch a website for my YouTube channel while I'm at it!
    - Show that I deployed using the `StaticSite` construct instead of
      `AstroSite`.
    - Explain that my blog site needs almost no JS. One of Astro's main selling
