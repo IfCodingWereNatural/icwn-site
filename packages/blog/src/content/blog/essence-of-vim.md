@@ -3,14 +3,13 @@ title: 'The Essence of Vim: Perspectives from a Former VSCode User'
 pubDatetime: 2022-04-18
 postSlug: essence-of-vim
 featured: false
-draft: true
 tags:
   - VIM
   - NEOVIM
   - VSCODE
 description: |
-    In this blog post, I share my journey between Vim and VSCode, exploring the
-    trade-offs and learning curves. 
+  In this blog post, I share my journey between Vim and VSCode, exploring the
+  trade-offs and learning curves.
 ---
 
 ## Table of contents
@@ -32,7 +31,7 @@ long term commitment.
 
 Around this time, I had been in a relationship with Atom when this new flashy
 new text editor caught my eye - Visual Studio Code. It was well connected and
-came from a wealthy company. Dumping Atom was an easy choice. 
+came from a wealthy company. Dumping Atom was an easy choice.
 
 Things were wonderful in the beginning. However, eventually the feelings grew
 platonic. I kept asking myself if I'd made the right decision. But you know, we
@@ -44,7 +43,7 @@ Eventually, I graduated from college and started my career. Occasionally, I'd
 run into my old friend, Vim, and old feelings would resurface. I don't know if
 it was simply boredom or realizing VSCode wasn't allowing me to be my best
 self, but I started flirting with the idea of using Vim as my full-time text
-editor. 
+editor.
 
 Unfortunately, as much as it made my wrist ache, it was just too hard.
 By this point, VSCode and I had already had several projects together. It
@@ -61,13 +60,12 @@ Ha, I'm getting carried away -- such a silly analogy.
 > I felt stuck between two worlds, VSCode on one hand and Vim on the other. I
 > was living a dual life and I could tell Vim didn't feel like it belonged.
 
-
 Time passed and I began to think
 things might work out. But, as life would have it, I was unexpectedly put on a
 large Typescript project. Just kidding, the project wasn't even that large.
 Yet, out of nowhere, VSCode started struggling, like, a lot. The constant
 linting, auto formatting, file watchers, and running code diagnostics became
-too much for VSCode. 
+too much for VSCode.
 
 This sort of thing had happened to some extent before. I
 noticed VSCode was spending more and more time with Code Helper (Renderer). I
@@ -79,19 +77,19 @@ maintain the status quo, so I did what I could to keep us going.
 ## The ultimatum
 
 Others had warned me of potential performance problems with VSCode, and trust
-me, I had my suspicions. Yet, I never thought it would happen to me. *To me!* I
+me, I had my suspicions. Yet, I never thought it would happen to me. _To me!_ I
 tried disabling other extensions in the hopes of patching things over, but in
 the end it was as I had feared. The bulk of the performance issues stemmed from
-my relationship with Vim. *It was as though VSCode was giving me an ultimatum:
-"It's me… or Vim."*
+my relationship with Vim. _It was as though VSCode was giving me an ultimatum:
+"It's me… or Vim."_
 
 And so I followed my heart and left VSCode.
 
 It was hard. There were difficult days. At times I was tempted to run back to
-the familiarity of VSCode. *But I was through with settling.*
+the familiarity of VSCode. _But I was through with settling._
 
-I was fully committed to this new life, *but I couldn't deny that VSCode had
-changed me*. I realized the most important thing to me was simply having an
+I was fully committed to this new life, _but I couldn't deny that VSCode had
+changed me_. I realized the most important thing to me was simply having an
 editor that works. Even to this day, I still struggle with this.
 
 ---
@@ -122,7 +120,7 @@ But boy oh boy, it takes time to get there.
 > In a literal sense, you must become Vim. It's knowledge stored in the body,
 > not the mind. That's the essence of Vim.
 
-I no longer consider VSCode a viable alternative *for myself*. This is, after
+I no longer consider VSCode a viable alternative _for myself_. This is, after
 all, a personal journey. Yet, on the other hand it takes hours of configuring
 Vim to bring it up to feature parity with VSCode. And after the configuration
 is done, it takes even more hours of training muscle memory before the promise
@@ -189,10 +187,10 @@ IDE without the toil of configuring every last inch of their environment.
 I've felt the confusion of figuring out which plugin manager to use, why there
 are so many, and feeling frustrated that I even needed to care. I picked up Lua
 for no other reason than to configure Neovim. Yeah, it's a nifty little
-language. *No I don't care*. **After all, I use Vim for the express purpose of
+language. _No I don't care_. **After all, I use Vim for the express purpose of
 writing code as productively and quickly as possible.** Learning an extra
 language (even a simple one) simply to configure my editor so I can do my
-*actual* work is a *pretty big freaking barrier*!
+_actual_ work is a _pretty big freaking barrier_!
 
 Despite Lunarvim providing a prebuilt Neovim, I still found myself tweaking the
 experience, which naturally involved going down deep and cavernous rabbit
