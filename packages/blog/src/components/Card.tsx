@@ -1,9 +1,9 @@
 import Datetime from './Datetime'
-import type { SstTutorialFrontmatter } from '@content/_schemas'
+import type { Frontmatter } from '@content/_schemas'
 
 export interface Props {
   href?: string
-  frontmatter: SstTutorialFrontmatter
+  frontmatter: Frontmatter
   secHeading?: boolean
 }
 

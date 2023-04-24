@@ -12,7 +12,7 @@ import type { CollectionEntry } from 'astro:content'
 export interface Props {
   pageNum: number
   totalPages: number
-  posts: CollectionEntry<'sst'>[]
+  posts: Array<CollectionEntry<'sst'> | CollectionEntry<'blog'>>
 }
 
 const { pageNum, totalPages, posts } = Astro.props

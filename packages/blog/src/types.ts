@@ -1,3 +1,5 @@
+import type { CollectionEntry } from 'astro:content'
+
 export type Site = {
   website: string
   author: string
@@ -40,3 +42,5 @@ export type SocialMedia =
   | 'Steam'
   | 'Telegram'
   | 'Mastodon'
+
+export type Post = CollectionEntry<'blog'> | CollectionEntry<'sst'>

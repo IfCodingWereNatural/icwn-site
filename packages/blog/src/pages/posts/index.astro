@@ -7,9 +7,13 @@ import getSstTutorialTitles from '@utils/getSstTutorialTitles'
 
 import { getCollection } from 'astro:content'
 
-const posts = await getCollection('sst')
+const sstCollection = await getCollection('sst')
   .then(sortPostsByPart)
   .then(getSstTutorialTitles)
+
+const blogSelection = await getCollection('blog')
+
+const posts = [...blogSelection, ...sstCollection]
 
 const totalPages = getPageNumbers(posts.length)
 
