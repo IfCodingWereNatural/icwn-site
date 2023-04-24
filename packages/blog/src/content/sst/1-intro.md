@@ -1,5 +1,5 @@
 ---
-title: 'Introduction'
+title: 'Introduction to SST'
 pubDatetime: 2023-04-21
 postSlug: sst-intro
 featured: true

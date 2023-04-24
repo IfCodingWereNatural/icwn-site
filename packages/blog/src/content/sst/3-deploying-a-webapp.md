@@ -1,13 +1,13 @@
 ---
-title: 'Finish Deploying Our First SST Website'
-pubDatetime: 2023-04-23
+title: 'Finish Deploying Our First Website'
+pubDatetime: 2023-04-24
 postSlug: website-deployment
-featured: false
+featured: true
 tags:
   - SST
 description: |
-  Picking up from Part 2 and deploying the Astro website to
-  CloudFront.
+  This lesson picks up from Part 2. We'll deploy the Astro website to
+  CloudFront using SST.
 postNumber: 3
 ---
 
@@ -17,6 +17,22 @@ postNumber: 3
 
    - Use cloudfront URL so you don't reveal `ifcodingwerenatural.com` yet
    - Show the file uploader thingy. I'll show the rest of the blog site later.
+
+1. A thing or two from last time:
+
+   - CORS is an opt in policy, so I assumed by not setting the `cors` options,
+     the response would not include CORS headers, and therefore I would not
+     have to deal with CORS.
+
+     Setting `cors: true` turns out to have the opposite effect I thought it
+     would have, which is, it adds CORS headers, but allows any method and any
+     origin by default.
+
+     TL;DR: if you don't want to deal with CORS, set `cors: true` in the config.
+
+   - I made a claim about having wide open permissions locally. I need to test
+     this out, because the docs say the lambda function that runs locally
+     should use the same permissions as the deployed lambda.
 
 1. Deploy to CloudFront and explain the architecture.
 
