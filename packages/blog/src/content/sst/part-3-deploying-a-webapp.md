@@ -1,6 +1,6 @@
 ---
-title: 'SST Tutorial, Part 3 | Live Lambda: The Main Reason to Use SST'
-pubDatetime: 2022-06-06T04:06:31Z
+title: 'Finish Deploying Our First SST Website'
+pubDatetime: 2023-04-23
 postSlug: website-deployment
 featured: true
 tags:
@@ -11,7 +11,7 @@ description: |
 postNumber: 3
 ---
 
-### Video Outline:
+## Outline
 1. Explain what we're doing
 1. Deploy to CloudFront and explain the architecture.
    - Upload an image to demonstrate it works in the cloud

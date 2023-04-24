@@ -10,11 +10,13 @@ import Socials from '@components/Socials.astro'
 import sortPostsByPart from '@utils/getSortedPosts'
 import slugify from '@utils/slugify'
 import { SOCIALS } from '@config'
+import getSstTutorialTitles from '@utils/getSstTutorialTitles'
 
 const posts = await getCollection('sst')
+  .then(getSstTutorialTitles)
+  .then(sortPostsByPart)
 
-const sortedPosts = sortPostsByPart(posts)
-const featuredPosts = sortedPosts.filter(({ data }) => data.featured)
+const featuredPosts = posts.filter(({ data }) => data.featured)
 
 const socialCount = SOCIALS.filter((social) => social.active).length
 ---
@@ -40,7 +42,15 @@ const socialCount = SOCIALS.filter((social) => social.active).length
         </svg>
       </a>
 
-      <p>TODO: Add a website description here</p>
+      <p>
+        <em>If Coding Were Natural</em> is just the place where I write down thoughts
+        and ideas to help with creating videos for my YouTube channel to help with
+        creating videos for my <a
+          href="https://www.youtube.com/@ifcodingwerenatural"
+        >
+          YouTube channel
+        </a>.
+      </p>
       {
         // only display if at least one social link is enabled
         socialCount > 0 && (
@@ -78,7 +88,7 @@ const socialCount = SOCIALS.filter((social) => social.active).length
       <h2>Recent Posts</h2>
       <ul>
         {
-          sortedPosts.map(
+          posts.map(
             ({ data }, index) =>
               index < 4 && (
                 <Card

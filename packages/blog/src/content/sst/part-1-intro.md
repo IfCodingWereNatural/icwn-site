@@ -1,6 +1,6 @@
 ---
-title: 'SST Tutorial, Part 1 | Introduction'
-pubDatetime: 2023-04-22T00:00:00Z
+title: 'Introduction'
+pubDatetime: 2023-04-21
 postSlug: intro
 featured: true
 tags:

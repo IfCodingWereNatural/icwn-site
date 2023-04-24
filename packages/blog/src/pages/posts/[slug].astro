@@ -6,6 +6,7 @@ import sortPostsByPart from '@utils/getSortedPosts'
 import getPageNumbers from '@utils/getPageNumbers'
 import slugify from '@utils/slugify'
 import { SITE } from '@config'
+import getSstTutorialTitles from '@utils/getSstTutorialTitles'
 
 export interface Props {
   post: CollectionEntry<'sst'>
@@ -30,10 +31,18 @@ const { slug } = Astro.params
 const { post } = Astro.props
 
 const posts = await getCollection('sst')
+  .then(sortPostsByPart)
+  .then(getSstTutorialTitles)
 
-const sortedPosts = sortPostsByPart(posts)
+const nextPost = posts.find(
+  (next) => next.data.postNumber === post?.data.postNumber + 1,
+)
 
-const totalPages = getPageNumbers(sortedPosts.length)
+const prevPost = posts.find(
+  (prev) => prev.data.postNumber === post?.data.postNumber - 1,
+)
+
+const totalPages = getPageNumbers(posts.length)
 
 const currentPage =
   slug && !isNaN(Number(slug)) && totalPages.includes(Number(slug))
@@ -42,12 +51,12 @@ const currentPage =
 const lastPost = currentPage * SITE.postPerPage
 const startPost = lastPost - SITE.postPerPage
 
-const paginatedPosts = sortedPosts.slice(startPost, lastPost)
+const paginatedPosts = posts.slice(startPost, lastPost)
 ---
 
 {
   post ? (
-    <PostDetails post={post} />
+    <PostDetails post={post} next={nextPost} prev={prevPost} />
   ) : (
     <Posts
       posts={paginatedPosts}

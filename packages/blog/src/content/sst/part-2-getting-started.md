@@ -1,6 +1,6 @@
 ---
-title: 'SST Tutorial, Part 2 | Getting Started'
-pubDatetime: 2023-04-22T00:00:00Z
+title: 'Getting Started'
+pubDatetime: 2023-04-22
 postSlug: getting-started
 featured: true
 tags:

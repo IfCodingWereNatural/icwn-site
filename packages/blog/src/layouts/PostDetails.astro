@@ -5,18 +5,25 @@ import Footer from '@components/Footer.astro'
 import Tag from '@components/Tag.astro'
 import Datetime from '@components/Datetime'
 import type { CollectionEntry } from 'astro:content'
+import LinkButton from '@components/LinkButton.astro'
+import slugify from '@utils/slugify'
 
 export interface Props {
   post: CollectionEntry<'sst'>
+  next?: CollectionEntry<'sst'>
+  prev?: CollectionEntry<'sst'>
 }
 
-const { post } = Astro.props
+const { post, next, prev } = Astro.props
 
 const { title, author, description, ogImage, pubDatetime, tags } = post.data
 
 const { Content } = await post.render()
 
 const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin).href
+
+const linkify = (title: string) =>
+  title.replace(/SST Tutorial, /i, '').replace(' |', ':')
 ---
 
 <Layout title={title} author={author} description={description} ogImage={ogUrl}>
@@ -40,6 +47,104 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin).href
       <Content />
     </article>
 
+    <div class="mt-8 grid grid-cols-2">
+      {
+        prev && (
+          <LinkButton
+            href={`/posts/${slugify(prev.data)}/`}
+            title={linkify(prev.data.title)}
+            className={`focus-outline p-3 sm:p-1`}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="800px"
+              height="800px"
+              viewBox="0 0 24 24"
+            >
+              <title />
+              <g id="Complete">
+                <g id="arrow-left">
+                  <g>
+                    <polyline
+                      data-name="Right"
+                      fill="none"
+                      id="Right-2"
+                      points="7.6 7 2.5 12 7.6 17"
+                      stroke="#fff"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    />
+
+                    <line
+                      fill="none"
+                      stroke="#fff"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      x1="21.5"
+                      x2="4.8"
+                      y1="12"
+                      y2="12"
+                    />
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <div>{linkify(prev.data.title)}</div>
+          </LinkButton>
+        )
+      }
+
+      {
+        next && (
+          <LinkButton
+            href={`/posts/${slugify(next.data)}/`}
+            title={linkify(next.data.title)}
+            className={`focus-outline p-3 sm:p-1`}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="800px"
+              height="800px"
+              viewBox="0 0 24 24"
+            >
+              <title />
+              <g id="Complete">
+                <g id="arrow-right">
+                  <g>
+                    <polyline
+                      data-name="Right"
+                      fill="none"
+                      id="Right-2"
+                      points="16.4 7 21.5 12 16.4 17"
+                      stroke="#fff"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    />
+
+                    <line
+                      fill="none"
+                      stroke="#fff"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      x1="2.5"
+                      x2="19.2"
+                      y1="12"
+                      y2="12"
+                    />
+                  </g>
+                </g>
+              </g>
+            </svg>
+
+            <div>{linkify(next.data.title)}</div>
+          </LinkButton>
+        )
+      }
+    </div>
     <ul class="tags-container">
       {tags.map((tag) => <Tag name={tag} />)}
     </ul>

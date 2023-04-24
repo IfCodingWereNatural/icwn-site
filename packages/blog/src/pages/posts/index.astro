@@ -3,16 +3,17 @@ import { SITE } from '@config'
 import Posts from '@layouts/Posts.astro'
 import sortPostsByPart from '@utils/getSortedPosts'
 import getPageNumbers from '@utils/getPageNumbers'
+import getSstTutorialTitles from '@utils/getSstTutorialTitles'
 
 import { getCollection } from 'astro:content'
 
 const posts = await getCollection('sst')
+  .then(sortPostsByPart)
+  .then(getSstTutorialTitles)
 
-const sortedPosts = sortPostsByPart(posts)
+const totalPages = getPageNumbers(posts.length)
 
-const totalPages = getPageNumbers(sortedPosts.length)
-
-const paginatedPosts = sortedPosts.slice(0, SITE.postPerPage)
+const paginatedPosts = posts.slice(0, SITE.postPerPage)
 ---
 
 <Posts posts={paginatedPosts} pageNum={1} totalPages={totalPages.length} />

@@ -1,9 +1,9 @@
 ---
-title: 'SST Tutorial, Part 5 | API Gateway'
-pubDatetime: 2022-06-06T04:06:31Z
+title: 'API Gateway'
+pubDatetime: 2099-04-23
 postSlug: apigw
 featured: false
-draft: true
+draft: false
 tags:
   - SST
 description: |

@@ -1,11 +1,11 @@
 ---
-title: 'SST Tutorial, Part 4 | Finish Deploying Our First Website'
-pubDatetime: 2022-06-06T04:06:31Z
+title: 'Live Lambda: The Main Reason to Use SST'
+pubDatetime: 2023-04-23
 postSlug: live-lambda
 featured: true
 tags:
   - SST
-description: In part 4 we'll take a closer look at Live Lambda - SST's killer feature.
+description: If there's one reason to use SST, it's Live Lambda.
 postNumber: 4
 ---
 
