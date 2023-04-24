@@ -9,7 +9,9 @@ description: If there's one reason to use SST, it's Live Lambda.
 postNumber: 4
 ---
 
-### Video Outline:
+## Table of Contents
+
+## Video Outline:
 
 1. Demonstrate by showing the `Api` construct and pull up one of the lambda
    handlers.
@@ -44,3 +46,9 @@ postNumber: 4
 
    - Uses AWS IoT, which is completely serverless. This means it's very cost
      effective.
+
+## Bonus Tips:
+- I keep getting warning that `sst env` has been replaced by `sst bind`. But
+  what does it do?
+
+  Demonstrate by doing `pnpm sst bind sh` and display `SST_` env vars.

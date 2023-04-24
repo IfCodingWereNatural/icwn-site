@@ -1,5 +1,5 @@
 import { SSTConfig } from 'sst'
-// import { API } from './stacks/MyStack'
+import { API } from './stacks/MyStack'
 import { BlogStack } from './stacks/BlogStack'
 
 export default {
@@ -19,6 +19,6 @@ export default {
   },
 
   stacks(app) {
-    app.stack(BlogStack)
+    app.stack(API).stack(BlogStack)
   },
 } satisfies SSTConfig

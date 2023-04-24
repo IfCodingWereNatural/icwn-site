@@ -1,5 +1,5 @@
-import { StackContext, Api, Bucket, AstroSite, Cron } from 'sst/constructs'
-import * as sns from 'aws-cdk-lib/aws-sns'
+import { StackContext, Api, Bucket, AstroSite } from 'sst/constructs'
+import * as iam from 'aws-cdk-lib/aws-iam'
 
 export function API({ stack }: StackContext) {
   const api = new Api(stack, 'api', {
@@ -12,27 +12,22 @@ export function API({ stack }: StackContext) {
     cors: true,
   })
 
-  // const blogSite = new AstroSite(stack, 'blog-site', {
-  //   bind: [bucket],
-  //   path: 'packages/blog',
-  //   customDomain: {
-  //     domainName: 'ifcodingwerenatural.com',
-  //     domainAlias: 'www.ifcodingwerenatural.com',
-  //   },
-  // })
-
-  const cron = new Cron(stack, 'MyTestCronJob', {
-    schedule: 'rate(1 day)',
-    job: 'packages/functions/src/lambda.handler',
+  const site = new AstroSite(stack, 'astro-site', {
+    bind: [bucket],
+    path: 'packages/astro',
   })
 
-  const topic = new sns.Topic(stack, 'Topic')
-
-  topic.grantPublish(cron.jobFunction)
-  cron.attachPermissions([[topic, 'grantPublish']])
+  const role = new iam.Role(stack, 'sst-tutorial', {
+    assumedBy: new iam.AccountPrincipal(stack.account),
+    roleName: 'sst-tutorial-role',
+    managedPolicies: [
+      iam.ManagedPolicy.fromAwsManagedPolicyName('PowerUserAccess'),
+    ],
+  })
 
   stack.addOutputs({
     ApiEndpoint: api.url,
-    // BLOG_URL: blogSite.url,
+    URL: site.url,
+    SST_ROLE: role.roleName,
   })
 }

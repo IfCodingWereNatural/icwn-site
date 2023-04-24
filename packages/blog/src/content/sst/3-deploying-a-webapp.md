@@ -11,14 +11,14 @@ description: |
 postNumber: 3
 ---
 
-## Outline
+## Table of Contents
 
-1. Show what I'll be deploying
+## Show what I'll be deploying
 
    - Use cloudfront URL so you don't reveal `ifcodingwerenatural.com` yet
    - Show the file uploader thingy. I'll show the rest of the blog site later.
 
-1. A thing or two from last time:
+## A thing or two from last time:
 
    - CORS is an opt in policy, so I assumed by not setting the `cors` options,
      the response would not include CORS headers, and therefore I would not
@@ -34,14 +34,14 @@ postNumber: 3
      this out, because the docs say the lambda function that runs locally
      should use the same permissions as the deployed lambda.
 
-1. Deploy to CloudFront and explain the architecture.
+## Deploy to CloudFront and explain the architecture.
 
    - In last video, I showed that I could upload an image to S3 from my local
      machine. Upload an image on the deployed site to demonstrate it works in
      the cloud
    - Create a cronjob to delete images.
 
-1. Introduce [ifcodingwerenatural.com](https://ifcodingwerenatural.com).
+## Introduce [ifcodingwerenatural.com](https://ifcodingwerenatural.com).
 
    - If I'm going to make a tutorial on deploying a website, I might as well
      launch a website for my YouTube channel while I'm at it!
@@ -53,4 +53,8 @@ postNumber: 3
      construct makes more sense for my needs, (this is because `AstroSite`
      requires you configure astro with SSR enabled).
 
-1. Next up, Live Lambda!
+---
+
+## Next Up
+
+Next up, Live Lambda!
