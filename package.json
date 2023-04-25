@@ -22,7 +22,7 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
     "prettier-plugin-tailwindcss": "^0.2.5",
-    "sst": "^2.5.5",
+    "sst": "^2.7.1",
     "typescript": "^5.0.4"
   },
   "workspaces": [

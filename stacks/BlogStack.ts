@@ -1,7 +1,9 @@
 import { StackContext, StaticSite } from 'sst/constructs'
 
-export function BlogStack({ stack }: StackContext) {
-  const site = new StaticSite(stack, 'StaticBlogSite', {
+export function BlogStack({ stack, app }: StackContext) {
+  app.logicalPrefixedName('Blog')
+
+  const site = new StaticSite(stack, 'StaticSite', {
     path: 'packages/blog',
     buildOutput: 'dist',
     buildCommand: 'pnpm run build',

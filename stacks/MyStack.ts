@@ -2,7 +2,7 @@ import { StackContext, Api, Bucket, AstroSite } from 'sst/constructs'
 import * as iam from 'aws-cdk-lib/aws-iam'
 import { makeNameGenerator } from './utils'
 
-export function API({ stack }: StackContext) {
+export function APIStack({ stack }: StackContext) {
   const generateName = makeNameGenerator(stack)
 
   const api = new Api(stack, 'api', {
@@ -11,7 +11,9 @@ export function API({ stack }: StackContext) {
     },
   })
 
-  const bucket = new Bucket(stack, 'images')
+  const bucket = new Bucket(stack, 'images', {
+    cors: true,
+  })
 
   const site = new AstroSite(stack, 'sst-tutorial-site', {
     bind: [bucket],

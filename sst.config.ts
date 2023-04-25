@@ -1,6 +1,7 @@
 import { SSTConfig } from 'sst'
-import { API } from './stacks/MyStack'
+import { APIStack } from './stacks/MyStack'
 import { BlogStack } from './stacks/BlogStack'
+import { TutorialStack } from './stacks/TutorialStack'
 
 export default {
   config({
@@ -14,11 +15,12 @@ export default {
       region,
       stage,
       profile,
-      name: 'sst-tutorial',
+      name: 'icwn',
     }
   },
 
   stacks(app) {
-    app.stack(API).stack(BlogStack)
+    app.stack(BlogStack)
+    app.stack(APIStack).stack(TutorialStack)
   },
 } satisfies SSTConfig

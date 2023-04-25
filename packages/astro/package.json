@@ -15,6 +15,6 @@
     "astro": "^2.3.0"
   },
   "devDependencies": {
-    "astro-sst": "^2.5.5"
+    "astro-sst": "^2.7.1"
   }
 }
