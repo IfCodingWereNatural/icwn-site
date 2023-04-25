@@ -38,7 +38,6 @@ const url = await getSignedUrl(new S3Client({}), command)
             'Content-Type': file.type,
             'Content-Disposition': `attachment; filename="${file.name}"`,
           },
-          mode: 'no-cors',
         })
 
         window.location.href = image.url.split('?')[0] || '/'
