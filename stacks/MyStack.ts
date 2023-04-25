@@ -1,7 +1,9 @@
 import { StackContext, Api, Bucket, AstroSite } from 'sst/constructs'
 import * as iam from 'aws-cdk-lib/aws-iam'
+import { makeNameGenerator } from './utils'
 
 export function API({ stack }: StackContext) {
+  const generateName = makeNameGenerator(stack)
   const api = new Api(stack, 'api', {
     routes: {
       'GET /': 'packages/functions/src/lambda.handler',
@@ -17,9 +19,9 @@ export function API({ stack }: StackContext) {
     path: 'packages/astro',
   })
 
-  const role = new iam.Role(stack, 'sst-tutorial', {
+  const role = new iam.Role(stack, generateName('sst-tutorial'), {
     assumedBy: new iam.AccountPrincipal(stack.account),
-    roleName: 'sst-tutorial-role',
+    roleName: generateName('sst-tutorial'),
     managedPolicies: [
       iam.ManagedPolicy.fromAwsManagedPolicyName('PowerUserAccess'),
     ],
