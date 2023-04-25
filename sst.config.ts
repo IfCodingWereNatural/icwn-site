@@ -21,6 +21,7 @@ export default {
 
   stacks(app) {
     app.stack(BlogStack)
-    app.stack(APIStack).stack(TutorialStack)
+    app.stack(TutorialStack)
+    app.stack(APIStack)
   },
 } satisfies SSTConfig
