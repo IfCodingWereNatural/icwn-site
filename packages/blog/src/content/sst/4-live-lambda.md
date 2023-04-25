@@ -57,3 +57,5 @@ postNumber: 4
   what does it do?
 
   Demonstrate by doing `pnpm sst bind sh` and display `SST_` env vars.
+
+- NEED to talk about the new `Context` API!

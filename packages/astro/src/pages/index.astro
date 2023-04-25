@@ -15,7 +15,7 @@ const command = new PutObjectCommand({
   Bucket: Bucket.images.bucketName,
 })
 
-const url = await getSignedUrl(client, command)
+const url = await getSignedUrl(new S3Client({}), command)
 ---
 
 <Layout title="Astro x SST">
@@ -38,6 +38,7 @@ const url = await getSignedUrl(client, command)
             'Content-Type': file.type,
             'Content-Disposition': `attachment; filename="${file.name}"`,
           },
+          mode: 'no-cors',
         })
 
         window.location.href = image.url.split('?')[0] || '/'
