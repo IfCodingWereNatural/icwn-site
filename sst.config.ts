@@ -1,5 +1,4 @@
 import { SSTConfig } from 'sst'
-import { APIStack } from './stacks/MyStack'
 import { BlogStack } from './stacks/BlogStack'
 import { TutorialStack } from './stacks/TutorialStack'
 
@@ -22,6 +21,5 @@ export default {
   stacks(app) {
     app.stack(BlogStack)
     app.stack(TutorialStack)
-    app.stack(APIStack)
   },
 } satisfies SSTConfig
