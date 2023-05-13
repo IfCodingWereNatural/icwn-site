@@ -3,6 +3,12 @@ import { Time } from '@sst-tutorial/core/time'
 
 export const handler = ApiHandler(async (_evt) => {
   return {
-    body: `Hello world. The time is ${Time.now()}`,
+    statusCode: 200,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      hello: 'world',
+    }),
   }
 })
