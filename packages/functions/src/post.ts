@@ -2,7 +2,7 @@ import { ApiHandler } from 'sst/node/api'
 
 const guess = +(process.env.GUESS as string)
 
-const response = (payload: any) => {
+const response = (payload: unknown) => {
   return {
     statusCode: 200,
     headers: {
