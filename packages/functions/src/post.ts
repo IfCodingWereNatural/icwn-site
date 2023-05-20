@@ -13,12 +13,7 @@ const response = (payload: unknown) => {
 }
 
 export const handler = ApiHandler(async ({ body }) => {
-  console.log('guess:', guess)
   const parsed = typeof body === 'string' ? JSON.parse(body) : {}
-
-  if (parsed.guess === guess) {
-    return response({ message: 'you are correct!' })
-  }
-
-  return response({ message: 'you are wrong' })
+  const message = parsed.guess === guess ? 'you are correct!' : 'you are wrong'
+  return response({ message })
 })
