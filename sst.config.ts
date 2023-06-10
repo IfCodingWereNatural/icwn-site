@@ -1,7 +1,7 @@
 import { SSTConfig } from 'sst'
 import { BlogStack } from './stacks/BlogStack'
-import { TutorialStack } from './stacks/TutorialStack'
-import { ApiStack } from './stacks/ApiStack'
+// import { TutorialStack } from './stacks/TutorialStack'
+// import { ApiStack } from './stacks/ApiStack'
 
 export default {
   config({
@@ -21,7 +21,7 @@ export default {
 
   stacks(app) {
     app.stack(BlogStack)
-    app.stack(TutorialStack)
-    app.stack(ApiStack)
+    // app.stack(TutorialStack)
+    // app.stack(ApiStack)
   },
 } satisfies SSTConfig
