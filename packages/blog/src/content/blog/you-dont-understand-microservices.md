@@ -22,6 +22,8 @@ You have been warned.
 
 By the way, how did you even end up here? 😂
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tckzYnlK-kw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Table of contents
 
 ## Introduction
