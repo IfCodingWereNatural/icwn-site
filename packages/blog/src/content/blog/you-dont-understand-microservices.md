@@ -4,55 +4,55 @@ pubDatetime: 2022-06-10
 featured: true
 draft: false
 tags:
-  - VIM
-  - NEOVIM
-  - VSCODE
+  - microservices
 description: |
   This blog post is my take on why people say you should not use
   microservices.
 ---
 
+## DISCLAIMER
+
+These are just the rambling thoughts of a random guy on the internet. The
+following are essentially notes I used to put my thoughts together for a
+youtube video (should be linked below).
+
+This article is not polished. It is a rough draft of the rough draft.
+
+You have been warned.
+
+By the way, how did you even end up here? 😂
+
 ## Table of contents
 
-First of all, the thumbnail is click bait! I don't mean _you_, dear watcher,
-are one of these morons who don't understand microservices. I just mean those
-other degenerates.
+## Introduction
 
-But with that said, I'm not going to be super academic with this video. I
-tried, and it just felt exhausting, and I've been afraid I'll post a video and
-someone will be like "oh you said 'microservice' and that doesn't make sense,
-it's 'microservices architecture'".
-
-So that's my disclaimer. So this is just me speaking off the cuff without a script.
-So that's my disclaimer. So this is just me completely unscripted speaking off the cuff
-
-> (muttering under breath) No, that sounds weird, maybe instead... (typing it
-> out while still muttering under breath) "this is just me, completely
-> unscripted, speaking off the cuff".
-> (then saying with normal voice) This is just me, completely unscripted, speaking off the cuff.
-
-If you write software for a living, then you've probably heard many times that
+If you write software for a living, you've probably heard many times that
 microservices are a bad idea and we should all just use monoliths. We seem to
 be warned time and time again not to use a microservices. So why then are
-microservices still so proliferated? I got my first job as a software developer over 8 years ago,
-And I guess I've never asked my coworkers, but personally, I've never worked
-for an organization or at a company that didn't claim to use microservice in
-some form or fasion.
+microservices so proliferated?
+
+Personally, I've never worked for an organization or company that didn't claim
+to use microservice in some form or fasion.
 
 I watched a video called "microservices explained in 5 minutes" and oh
 boy, there's so much wrong that it inspired me to make my own video.
 
-I'm not going to link to the video because the goal of this is not to crap on
-someone else's video, but because I want to talk about my perception of what
-microservices are actually about.
+I won't link to the video because the goal of this is not to crap on someone
+else's content, but because I want to talk about what microservices really are.
 
-I think the main reason teams choose "MSAs" is to decompose applications into
-separate services to make them independently deployable.
+I think the main reason teams choose the _Microservice Architectures_ (MSAs) is
+to decompose applications into separate services to make them independently
+deployable. This is a misguided reason. **But if you think the main purpose of
+MSAs to to independently deploy a project, then you might not understand
+microservices very well**.
 
-But, MSAs increase complexity. Why? And how? I'll get into that, but they do.
-So if the only reason a team chooses an MSA is to independently deploy
-services, then additional complexity is introduced into the system essentially
-for no good reason.
+MSAs increase complexity. Why? And how? I'll get into that, but they do. But,
+if the only reason a team chooses an MSA is to independently deploy services,
+then additional complexity is introduced into the system essentially for no
+good reason.
+
+The following are a list of "assertions" I came up with that are true for
+microservices.
 
 ## Assertion 1: If your system doesn't treat events as first class citizens, then you don't really have a microservices architecture.
 
@@ -65,8 +65,6 @@ first class citizens is a poorly understood subject by most devs and when
 events _are_ used, it's usually a naive implementation, but most of the time,
 teams do not have these things at the forefront of their mind when "adopting a
 Microservices Architecture".
-
-Okay, but "events"
 
 ## Assertion 2: a key characteristic of MSAs is that each service has its own database.
 
@@ -98,23 +96,29 @@ And so, what do you do?
 
 ## Assertion 3: cross cutting concerns between services is the crux of why microservices are difficult
 
-and pretty much always boils down to sharing data, which introduces the tradeoff of:
+It pretty much always boils down to sharing data, which introduces the tradeoff of:
 
 - strong consistency (which is less preformant, but reduces complexity)
-  - in a monolith, this is far less of an issue because you have direct access
-    to the data don't need to communicate with other services over a network
-    to get the data that you need. You do need to communicate over a network
-    to access the database (most likely), but this is far less costly in terms
-    of preformance.
-    and,
 - eventual consistency (which offers preformance, but greatly increases complexity)
 
-Fear leads to anger. Anger leads to hate. Hate leads to suffering.
+> Aside: in a monolith, this is far less of an issue because you have direct
+> access to the data don't need to communicate with other services over a
+> network to get the data that you need. You do need to communicate over a
+> network to access the database (most likely), but this is far less costly in
+> terms of preformance.
 
-MSA leads to cross cutting concerns, which leads to data sharing, which leads
-to dealing with the tradeoff of strong vs eventual consistency, which leads to
-either a significant decrease in preformance or a significant increase in
-complexity (and often both).
+A well known quote from Star Wars:
+
+> Fear leads to anger. Anger leads to hate. Hate leads to suffering.
+>
+> - Yoda
+
+In like manner, MSA leads to cross cutting concerns, which leads to data
+sharing, which leads to dealing with the tradeoff of strong vs eventual
+consistency, which leads to either a significant decrease in preformance or a
+significant increase in complexity (and sometimes both).
+
+Oh, and MSAs also lead to suffering.
 
 ## Assertion 4: You should start with a monolith because...
 
@@ -126,31 +130,43 @@ MSAs are an optimization. If you follow the common wisdom of "make something
 work, then make it better, then optimize it", then starting with a monolith if
 the logical first step.
 
-MSA's introduce complexity, but provide benefits such as scalability that
-aren't possible with monoliths such as scalability that aren't possible with
-monoliths, but that complexity should be intentional. Usually the complexity is
-unintentional, or at least not anticipated, and you end up with a complex
-system without the true benefits of an MSA.
+MSA's introduce complexity, but provide benefits that aren't possible with
+monoliths such as scalability that aren't possible (or at least, a lot more
+difficult to achieve) with monoliths, but that complexity should be
+intentional. Usually the complexity is unintentional, or at least not
+anticipated, and you end up with a complex system without the true benefits of
+an MSA.
+
+---
 
 # Transcript Notes
+
+I'm lazy, and this is really only meant for my eyes (apologies random internet
+traveler if you come across this), but the rest of this stuff is an audio
+transcription of me just talking my thoughts out loud.
+
+<details>
+    <summary markdown="span">
+    Click to expand transcription notes.
+    </summary>
 
 1st falacy, microservices are a bad idea. that's not true, microservices are an
 optimization. there's certain scenarios where ma's are entirely appropriate.
 the problem is, most people just jump for microservices right off the bat
 before the understand the problem space.
 
-this is a problem becuase MAs introduce complexity to a system. so if you want to make your life more
-difficult, then use MAs.
+this is a problem becuase MAs introduce complexity to a system. so if you want
+to make your life more difficult, then use MAs.
 
-if you're like me, then you may have thought that microservices make things easier. that's the second fallacy,
-that MAs make things easier.
+if you're like me, then you may have thought that microservices make things
+easier. that's the second fallacy, that MAs make things easier.
 
 Okay, these are just kind of unstructured thoughts about microservices. Ah,
-first fallacy is that microservices are a bad idea. That's
-not true. Microservices are an optimization. There's certain scenarios
-where microservices are entirely and completely appropriate. The problem is
-that most people just jump for microservices right off the bat and use it
-before they understand the problem space.
+first fallacy is that microservices are a bad idea. That's not true.
+Microservices are an optimization. There's certain scenarios where
+microservices are entirely and completely appropriate. The problem is that most
+people just jump for microservices right off the bat and use it before they
+understand the problem space.
 
 Microservices introduce a lot of complexity to a system. And so if you want to
 make your life harder, then adopt microservices.
@@ -162,9 +178,9 @@ that microservices make things easier and that's why people jump to it.
 Microservices do have benefits. I think the main one, and probably the reason
 why developers choose a microservice is architecture, is because it's easy to
 structure teams around independent services, and you can deploy independently
-and have separate projects and it's easier to work on your own set of
-features without stepping on other people's toes. But
-there's a couple problems with that.
+and have separate projects and it's easier to work on your own set of features
+without stepping on other people's toes. But there's a couple problems with
+that.
 
 I used to reason that, if the MSA is the ideal end-all-be-all architecture,
 (which it's not), then why wouldn't you just start with an MSA to begin with?
@@ -252,8 +268,6 @@ architecture could be more difficult to modify than a poorly designed monolith.
 And this would probably be controversial to say, but if you can't see that or
 don't under Sure.
 
----
-
 So this might be controversial to say, but if you don't see or understand why
 that is, then the chances are you don't really understand microservices.
 
@@ -270,7 +284,7 @@ of data.
 And former is most common in my experience. For example, if you have a classic
 online retail example where you have the an order service that tracks all
 customer orders, then you might also have a product service where, uh, a
-product service where all the data about. Uh, products are stored like titles,
+product service where all the data about. Products are stored like titles,
 descriptions, SKUs and whatnot.
 
 > INSERT THING ABOUT ONLINE RETAIL EXAMPLE HERE!
@@ -349,7 +363,11 @@ and you start with a microservices architecture, you will, 100% guaranteed, run
 into issues that will be far more difficult to address/modify/fix than if you
 had just started with a monolith approach.
 
-TL;DR: Microservices are an optimization. If you follow the common wisdom of:
+</details>
+
+## TL;DR
+
+Microservices are an optimization. If you follow the common wisdom of:
 
 1. make something work,
 1. then make it better,
