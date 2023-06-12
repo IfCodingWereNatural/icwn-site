@@ -3,11 +3,11 @@ import type { Site, SocialObjects } from './types'
 export const SITE: Site = {
   website: 'https://ifcodingwerenatural.com/',
   author: 'Craig Blackburn',
-  desc: 'TODO: Add description',
+  desc: 'Blog website to put thoughts down for my YouTube channel',
   title: 'If Coding Were Natural',
   ogImage: 'astropaper-og.jpg',
   lightAndDarkMode: true,
-  postPerPage: 3,
+  postPerPage: 5,
 }
 
 export const LOCALE = ['en-EN'] // set to [] to use the environment default
@@ -28,7 +28,7 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: 'Github',
-    href: 'https://github.com/ifcodingwerenatural/',
+    href: 'https://github.com/IfCodingWereNatural/icwn-site',
     linkTitle: ` ${SITE.title} on Github`,
     active: true,
   },
